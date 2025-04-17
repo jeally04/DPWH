@@ -1,0 +1,104 @@
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 9999; /* Increased z-index to ensure it appears on top */
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+   font-family: 'Poppins', sans-serif;
+   background-color: #fefefe;
+   margin: 15% auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   max-width: 350px;
+   text-align: center;
+}
+
+.close,
+.confirm-logout,
+.cancel-logout {
+   color: white;
+   background-color: #444;
+   border: none;
+   padding: 10px 20px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   margin: 5px;
+}
+
+.confirm-logout {
+   font-family: 'Poppins', sans-serif;
+   background-color: #eb3505;
+   border-radius: 25px;
+}
+
+.cancel-logout {
+   background-color: #010066;
+   font-family: 'Poppins', sans-serif;
+   border-radius: 25px;
+}
+
+.FormNav {
+   color: #EA3409;
+}
+
+.success-modal {
+   display: none;
+   position: fixed;
+   z-index: 9999; /* Increased z-index to ensure it appears on top */
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.success-modal-content {
+   background-color: #fefefe;
+   margin: 15% auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   max-width: 300px;
+   text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+   .modal-content,
+   .success-modal-content {
+       width: 90%;
+       max-width: 280px;
+   }
+
+   .close,
+   .confirm-logout,
+   .cancel-logout {
+       padding: 8px 16px;
+       margin: 5px 0;
+   }
+}
+
+@media (max-width: 480px) {
+   .modal-content,
+   .success-modal-content {
+       width: 95%;
+       max-width: 260px;
+   }
+
+   .close,
+   .confirm-logout,
+   .cancel-logout {
+       padding: 6px 12px;
+       margin: 4px 0;
+   }
+}

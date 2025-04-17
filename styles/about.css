@@ -1,0 +1,110 @@
+/* navbar.css or your main CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+* {
+   font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ .about-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-x: hidden;
+  }
+ .form-container {
+    width: auto;
+    max-width: 1200px;
+    margin: 50px auto;
+    border: 1px solid #000;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+ }
+ 
+ .dp h1 {
+    color: #010066;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.2em;
+ }
+ 
+ .qp h2 {
+    font-size: 1.7em;
+    color: #010066;
+    text-align: center;
+ 
+ }
+ 
+ .qp p {
+    font-size: 0.7em;
+    color: black;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+ }
+ 
+ .vis h2 {
+    font-size: 1.7em;
+    color: #010066;
+    text-align: center;
+ }
+ 
+ .vis p {
+    font-size: 0.7em;
+    color: black;
+    padding-left: 20%;
+    padding-right: 20%;
+ }
+ 
+ .mis h2 {
+    font-size: 1.7em;
+    color: #010066;
+    text-align: center;
+ }
+ 
+ .mis p {
+    font-size: 0.7em;
+    color: black;
+    padding-left: 20%;
+    padding-right: 20%;
+ }
+ 
+ .mand h2 {
+    font-size: 1.7em;
+    color: #010066;
+    text-align: center;
+ }
+ 
+ .mand p {
+    font-size: 0.7em;
+    color: black;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+ }
+ 
+ .corval h2 {
+    font-size: 1.7em;
+    color: #010066;
+    text-align: center;
+ }
+ 
+ .corval p {
+    font-size: 0.7em;
+    color: black;
+    padding-left: 43%;
+    padding-right: 43%;
+    text-align: justify;
+ }
+ 
+ .logoo {
+    width: 859px;
+    height: 786px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0.07;
+ }
+ 

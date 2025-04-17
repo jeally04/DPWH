@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Job Sheet Form</title>
+   <link rel="stylesheet" href="../styles/form.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+   <div class="form-container">
+      <form id="job-sheet-form" method="post">
+         <img src="../image/logo.png" alt="Logo" class="logo">
+         <h1>Republic of the Philippines</h1>
+         <h2>DEPARTMENT OF PUBLIC WORKS AND HIGHWAYS</h2>
+         <h3>REGIONAL OFFICE VII</h3>
+         <h4>Bohol First District Engineering Office</h4>
+         <h5>Tagbilaran City</h5>
+
+         <div class="section">
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+               <option value="">Select Type</option>
+               <option value="Hardware">Hardware</option>
+               <option value="Software">Software</option>
+            </select>
+         </div>
+
+         <!-- New Status Section -->
+         <div class="section">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+               <option value="Closed">Closed</option>
+               <option value="Open">Open</option>
+            </select>
+         </div>
+
+         <div class="section">
+            <h6>CLIENT'S INFORMATION and SERVICE REQUEST</h6>
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+            <label for="section_division">Section/Division:</label>
+            <input type="text" id="section_division" name="section_division" list="sectionList"
+               placeholder="Type or select..." required>
+            <datalist id="sectionList">
+               <option value="Maintenance Section (MS)">
+               <option value="MS - Maintenance Management Unit">
+               <option value="MS - Equipment Services Unit">
+               <option value="Construction Section (CS)">
+               <option value="CS - Contract Management Unit">
+               <option value="CS - Contract Claims Unit">
+               <option value="CS - Monitoring & Evaluation Unit">
+               <option value="Quality Assurance Section (QAS)">
+               <option value="QAS - Quality Implementation Unit">
+               <option value="QAS - Materials Testing Unit">
+               <option value="Finance Section (FS)">
+               <option value="FS - Accounting Unit">
+               <option value="FS - Budget Unit">
+               <option value="Administrative Section (ADMIN)">
+               <option value="ADMIN - Human Resource Management & Development Unit">
+               <option value="ADMIN - Records Management Unit">
+               <option value="ADMIN - Supply & Property Unit">
+               <option value="ADMIN - Cash Unit">
+               <option value="ADMIN - General Services Unit">
+               <option value="Planning and Design Section (PDS)">
+               <option value="PDS - Planning Unit">
+               <option value="PDS - Highways Design Unit">
+               <option value="PDS - Bridges & Other Public Works Design Unit">
+               <option value="PDS - Engineering Surveys & Investigation Unit">
+               <option value="PDS - Environmental, Social & Row Unit">
+               <option value="Procurement Staff">
+               <option value="Information & Communication Technology Staff">
+               <option value="Public Information Staff">
+               <option value="Support Staff">
+               <option value="Office of the Assistant District Engineer">
+               <option value="Office of the District Engineer">
+            </datalist>
+
+            <label for="description">Brief description of the Incident or Request:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="date_of_filing">Date of Filing:</label>
+            <input type="date" id="date_of_filing" name="date_of_filing" required>
+
+            <label for="contact_no">Contact No.:</label>
+            <input type="text" id="contact_no" name="contact_no" required>
+         </div>
+
+         <div class="section">
+            <h6>I.T. SUPPORT TECHNICAL ASSESSMENT</h6>
+
+            <div id="hardware_fields" style="display: none;">
+               <label for="hardware_type">Hardware Type:</label>
+               <div>
+                  <input type="text" id="hardware_type" name="hardware_type" oninput="handleInput()"
+                     list="hardwareTypeList" placeholder="Type or select...">
+                  <datalist id="hardwareTypeList">
+                     <option value="Desktop">
+                     <option value="UPS">
+                     <option value="Monitor">
+                     <option value="Printer">
+                     <option value="Keyboard">
+                     <option value="Mouse">
+                  </datalist>
+               </div>
+               <script>
+                  function handleInput() {
+                     var input = document.getElementById('hardware_type');
+                     var datalist = document.getElementById('hardwareTypeList');
+                     var options = datalist.getElementsByTagName('option');
+                     var inputValue = input.value;
+
+                     var matched = false;
+                     for (var i = 0; i < options.length; i++) {
+                        if (options[i].value.toLowerCase() === inputValue.toLowerCase()) {
+                           matched = true;
+                           break;
+                        }
+                     }
+
+                     if (matched) {
+                        input.setCustomValidity('');
+                     } else {
+                        input.setCustomValidity('');
+                     }
+                  }
+               </script>
+
+               <label for="serial_number">Serial Number:</label>
+               <input type="text" id="serial_number" name="serial_number">
+
+               <label for="brand_model">Brand and Model:</label>
+               <input type="text" id="brand_model" name="brand_model">
+
+               <label for="computer_name">Computer Name:</label>
+               <input type="text" id="computer_name" name="computer_name">
+            </div>
+
+            <div id="software_fields" style="display: none;">
+               <label for="application_description">Application System / Software Description:</label>
+               <textarea id="application_description" name="application_description"></textarea>
+
+               <label for="version">Version:</label>
+               <input type="text" id="version" name="version">
+
+               <label for="connectivity_description">Connectivity Description:</label>
+               <textarea id="connectivity_description" name="connectivity_description"></textarea>
+
+               <label for="user_account_description">User Account Description:</label>
+               <textarea id="user_account_description" name="user_account_description"></textarea>
+            </div>
+
+            <label for="assessment">Assessment:</label>
+            <textarea id="assessment" name="assessment"></textarea>
+
+            <label for="actions_taken">Actions Taken and/or Recommendations:</label>
+            <textarea id="actions_taken" name="actions_taken"></textarea>
+         </div>
+
+         <div class="section">
+            <label for="mode_of_filing">Mode of Filing:</label>
+            <select id="mode_of_filing" name="mode_of_filing" required>
+               <option value="Walk-in">Walk-in</option>
+               <option value="Telephone Call">Telephone Call</option>
+               <option value="Email">Email</option>
+            </select>
+
+            <label for="fulfilled_by">Fulfilled by:</label>
+            <input type="text" id="fulfilled_by" name="fulfilled_by" value="VIRGO L. ARMACHUELO" required>
+
+            <label for="date_received">Date and Time Received:</label>
+            <input type="datetime-local" id="date_received" name="date_received" required>
+
+            <label for="date_completed">Date and Time Completed:</label>
+            <input type="datetime-local" id="date_completed" name="date_completed" required>
+
+            <label for="reviewed_by">Reviewed by:</label>
+            <input type="text" id="reviewed_by" name="reviewed_by" value="VIRGO L. ARMACHUELO" readonly>
+         </div>
+
+         <div class="button-group">
+            <button id="submitBtn" type="submit">Submit</button>
+            <a href="pending.php"><button type="button" class="historybtn">Cancel</button></a>
+            <a href="history.php"><button type="button" class="historybtn">History</button></a>
+         </div>
+      </form>
+      <div id="response"></div>
+   </div>
+
+   <script>
+      document.getElementById('type').addEventListener('change', function () {
+         var type = this.value;
+         if (type === 'Hardware') {
+            document.getElementById('hardware_fields').style.display = 'block';
+            document.getElementById('software_fields').style.display = 'none';
+         } else if (type === 'Software') {
+            document.getElementById('hardware_fields').style.display = 'block';
+            document.getElementById('software_fields').style.display = 'block';
+         } else {
+            document.getElementById('hardware_fields').style.display = 'none';
+            document.getElementById('software_fields').style.display = 'none';
+         }
+      });
+
+      document.getElementById('submitBtn').addEventListener('click', function (event) {
+         const radios = document.querySelectorAll('input[type="radio"][required]');
+         let radiosValid = true;
+
+         radios.forEach(function (radio) {
+            const radioName = radio.name;
+            if (!document.querySelector('input[name="' + radioName + '"]:checked')) {
+               radiosValid = false;
+            }
+         });
+
+         const comments = document.getElementById('comments').value.trim();
+         const commentsValid = comments !== '';
+
+         if (!radiosValid || !commentsValid) {
+            event.preventDefault();
+            alert('Please complete all required fields');
+         }
+      });
+
+      function formatDateTime(date) {
+         const year = date.getFullYear();
+         const month = String(date.getMonth() + 1).padStart(2, '0');
+         const day = String(date.getDate()).padStart(2, '0');
+         let hours = date.getHours();
+         const minutes = String(date.getMinutes()).padStart(2, '0');
+         const ampm = hours >= 12 ? 'PM' : 'AM';
+
+         hours = hours % 12;
+         hours = hours ? hours : 12; // Handle midnight (0 hours)
+
+         return `${year}-${month}-${day}T${String(hours).padStart(2, '0')}:${minutes} ${ampm}`;
+      }
+
+      function setCurrentDateTime() {
+         const now = new Date();
+         const formattedDateTime = formatDateTime(now);
+         document.getElementById('date_received').value = formattedDateTime;
+         document.getElementById('date_completed').value = formattedDateTime;
+      }
+
+      document.addEventListener('DOMContentLoaded', (event) => {
+         setCurrentDateTime();
+      });
+
+      (function () {
+         var type = document.getElementById('type').value;
+         if (type === 'Hardware') {
+            document.getElementById('hardware_fields').style.display = 'block';
+         } else if (type === 'Software') {
+            document.getElementById('hardware_fields').style.display = 'block';
+            document.getElementById('software_fields').style.display = 'block';
+         }
+      })();
+   </script>
+
+   <script>
+      $(document).ready(function () {
+         const urlParams = new URLSearchParams(window.location.search);
+         if (urlParams.has('full_name')) {
+            $('#full_name').val(urlParams.get('full_name'));
+            $('#section_division').val(urlParams.get('section_division'));
+            $('#description').val(urlParams.get('description'));
+            $('#date_of_filing').val(urlParams.get('date_of_filing'));
+            $('#contact_no').val(urlParams.get('contact_no'));
+            $('#date_received').val(urlParams.get('date_received'));
+         }
+
+         $('#job-sheet-form').on('submit', function (event) {
+            event.preventDefault();
+
+            $.ajax({
+               url: '../Functions/process_form2.php',
+               type: 'POST',
+               data: $(this).serialize(),
+               success: function (response) {
+                  $('#response').html('<p>' + response + '</p>');
+                  $('#job-sheet-form')[0].reset();
+
+                  var pending_id = urlParams.get('pending_id');
+                  if (pending_id && confirm('Form submitted successfully. Do you want to delete the pending form?')) {
+                     window.location.href = 'pending.php?action=delete&id=' + pending_id;
+                  } else {
+                     window.location.href = 'pending.php';
+                  }
+               },
+               error: function () {
+                  $('#response').html('<p>An error occurred while submitting the form. Please try again.</p>');
+               }
+            });
+         });
+      });
+   </script>
+</body>
+
+</html>

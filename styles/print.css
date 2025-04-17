@@ -1,0 +1,351 @@
+body {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+}
+
+.Frame1 {
+   width: 595px;
+   height: 842px;
+   position: relative;
+   background: white;
+}
+
+.StandardJobSheet16190479143 {
+   width: 542px;
+   height: 795px;
+   left: 27px;
+   top: 23px;
+   position: absolute;
+   border: 1px black solid;
+   src: url(../image/jobsheet.png);
+}
+
+.Refno {
+   width: 100px;
+   height: 9px;
+   left: 495px;
+   top: 63px;
+   position: absolute;
+   color: black;
+   font-size: 8px;
+   font-weight: 400;
+   word-wrap: break-word;
+}
+
+.Clientsinfo {
+   width: 436px;
+   height: 46px;
+   left: 38px;
+   top: 111px;
+   position: absolute;
+}
+
+.Clientsinfo>div {
+   position: absolute;
+   color: black;
+   font-size: 8.5px;
+   font-weight: 400;
+   word-wrap: break-word;
+}
+
+.Fullname {
+   width: 300px;
+   height: 8px;
+   left: 5px;
+   top: 0px;
+}
+
+.Section {
+   width: 300px;
+   height: 8px;
+   left: 5px;
+   top: 13px;
+}
+
+.Filingdate {
+   width: 100px;
+   height: 8px;
+   left: 381px;
+   top: 0px;
+}
+
+.Contact {
+   width: 150px;
+   height: 8px;
+   left: 386px;
+   top: 13px;
+}
+
+.Bd {
+   width: 350px;
+   left: 5px;
+   top: 34px;
+   line-height: 1.5;
+}
+
+.Techassess {
+   width: 438px;
+   height: 269px;
+   left: 38px;
+   top: 256px;
+   position: absolute;
+}
+
+.Techassess>div {
+   position: absolute;
+   color: black;
+   font-size: 8.5px;
+   font-weight: 400;
+   word-wrap: break-word;
+}
+
+.Type {
+   width: 300px;
+   height: 8px;
+   left: 5px;
+   top: 0px;
+}
+
+.Brand {
+   width: 300px;
+   height: 8px;
+   left: 5px;
+   top: 14px;
+}
+
+.Serial {
+   width: 250px;
+   height: 8px;
+   left: 321px;
+   top: 0px;
+}
+
+.Computername {
+   width: 250px;
+   height: 8px;
+   left: 313px;
+   top: 13px;
+}
+
+.Descriptionas {
+   width: 325px;
+   height: 8px;
+   left: 58px;
+   top: 50px;
+   line-height: 1.5;
+}
+.desAS{
+   height: 8px;
+   left: 5px;
+   top: 50px;
+   line-height: 1.5;
+}
+
+.Version {
+   width: 100px;
+   height: 8px;
+   left: 401px;
+   top: 50px;
+}
+
+.Descriptionc {
+   width: 465px;
+   height: 8px;
+   left: 58px;
+   top: 99px;
+   line-height: 1.5;
+}
+.desC{
+   height: 8px;
+   left: 5px;
+   top: 99px;
+   line-height: 1.5;
+}
+
+.Descriptionua {
+   width: 465px;
+   height: 8px;
+   left: 58px;
+   top: 148px;
+   line-height: 1.5;
+}
+.desU{
+   height: 8px;
+   left: 5px;
+   top: 148px;
+   line-height: 1.5;
+}
+
+.Assessment {
+   width: 518px;
+   left: 5px;
+   top: 185px;
+   font-weight: 700;
+   line-height: 1.5;
+}
+
+.Actions {
+   width: 518px;
+   left: 5px;
+   top: 258px;
+   font-weight: 700;
+   line-height: 1.5;
+}
+
+.Techassess2 {
+   width: 381px;
+   height: 36px;
+   left: 39px;
+   top: 598px;
+   position: absolute;
+}
+
+.Techassess2>div {
+   position: absolute;
+   color: black;
+   font-size: 8.5px;
+   font-weight: 400;
+   word-wrap: break-word;
+}
+
+.Mof {
+   width: 57px;
+   height: 8px;
+   left: 5px;
+   top: 1px;
+}
+
+.Walkin,
+.Telephone,
+.Email {
+   width: 5px;
+   height: 10px;
+}
+
+.Walkin {
+   left: 89px;
+   top: 2px;
+}
+
+.Telephone {
+   left: 138px;
+   top: 2px;
+}
+
+.Email {
+   left: 209px;
+   top: 2px;
+}
+
+.Datr {
+   width: 200px;
+   height: 8px;
+   left: 5px;
+   top: 15px;
+}
+
+.datc {
+   width: 200px;
+   height: 8px;
+   left: 5px;
+   top: 30px;
+}
+
+.Fulfilledby {
+   width: 200px;
+   height: 8px;
+   left: 345px;
+   top: 2px;
+   text-align: center;
+   text-transform: uppercase;
+}
+.fulfill{
+   width: 250px;
+   height: 8px;
+   left: 335px;
+   top: 2px;
+}
+
+.Cevaluation {
+   width: 435px;
+   height: 56px;
+   left: 39px;
+   top: 686px;
+   position: absolute;
+}
+
+.Cevaluation>div {
+   position: absolute;
+   color: black;
+   font-size: 8.5px;
+   font-weight: 400;
+   word-wrap: break-word;
+}
+
+.Yes1,
+.No1,
+.Vs2,
+.S2,
+.Ns2,
+.Vs3,
+.S3,
+.Ns3 {
+   width: 5px;
+   height: 10px;
+}
+
+.Yes1 {
+   left: 301px;
+   top: 1px;
+}
+
+.No1 {
+   left: 336px;
+   top: 1px;
+}
+
+.Vs2 {
+   left: 301px;
+   top: 13px;
+}
+
+.S2 {
+   left: 374px;
+   top: 13px;
+}
+
+.Ns2 {
+   left: 427px;
+   top: 13px;
+}
+
+.Vs3 {
+   left: 301px;
+   top: 25px;
+}
+
+.S3 {
+   left: 374px;
+   top: 25px;
+}
+
+.Ns3 {
+   left: 427px;
+   top: 25px;
+}
+
+
+.Comments {
+   width: 350px;
+   left: 5px;
+   top: 46px;
+   font-weight: 700;
+   line-height: 1.5;
+}
+
+@page{
+   size: 21cm 29.7cm;
+   margin: 0;
+   transform: scale(2);
+}
