@@ -14,12 +14,14 @@ body {
    justify-content: space-between;
    align-items: center;
    padding: 0 20px;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .LogoAndText {
    display: flex;
    align-items: center;
    gap: 10px;
+   flex-shrink: 0;
 }
 
 .Logo1 {
@@ -49,9 +51,25 @@ body {
    margin-top: 5px;
 }
 
-
 .MenuToggle {
    display: none;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   width: 40px;
+   height: 40px;
+   border-radius: 8px;
+   background: transparent;
+   border: 2px solid #010066;
+   color: #010066;
+   font-size: 18px;
+   flex-shrink: 0;
+   transition: background 0.2s, color 0.2s;
+}
+
+.MenuToggle:hover {
+   background: #010066;
+   color: #fff;
 }
 
 .NavContainer {
@@ -83,8 +101,9 @@ body {
    transform: scale(1.1);
 }
 
-.Home {
-   color: #ea3409;
+.Navlinks a.active {
+   color: #eb3505;
+   font-weight: 600;
 }
 
 .PendingBadge {
@@ -93,7 +112,7 @@ body {
    border-radius: 50%;
    width: 25px;
    height: 25px;
-   display: flex;
+   display: inline-flex;
    justify-content: center;
    align-items: center;
    padding: 4px 8px;
@@ -117,9 +136,9 @@ body {
    transition-duration: .3s;
    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
    background-color: rgb(255, 65, 65);
+   flex-shrink: 0;
 }
 
-/* plus sign */
 .sign {
    width: 100%;
    transition-duration: .3s;
@@ -136,7 +155,6 @@ body {
    fill: white;
 }
 
-/* text */
 .text {
    position: absolute;
    right: 0%;
@@ -148,7 +166,6 @@ body {
    transition-duration: .3s;
 }
 
-/* hover effect on button width */
 .Btn:hover {
    width: 125px;
    border-radius: 40px;
@@ -161,7 +178,6 @@ body {
    padding-left: 20px;
 }
 
-/* hover effect button's text */
 .Btn:hover .text {
    opacity: 1;
    width: 70%;
@@ -169,72 +185,164 @@ body {
    padding-right: 10px;
 }
 
-/* button click effect */
 .Btn:active {
    transform: translate(2px, 2px);
 }
 
+/* ── Tablet / Mobile ── */
+@media (max-width: 900px) {
+   .DpwhText {
+      font-size: 24px;
+   }
+   .AdditionalText {
+      font-size: 13px;
+   }
+   .Logo1 {
+      height: 64px;
+   }
+   .Navlinks {
+      gap: 24px;
+   }
+   .Navlinks a {
+      font-size: 17px;
+   }
+}
+
 @media (max-width: 768px) {
    .Navigation {
-       flex-direction: column;
-       align-items: center;
-       padding: 10px;
-       height: auto;
+      height: auto;
+      flex-wrap: wrap;
+      padding: 8px 14px;
+      row-gap: 0;
    }
+
    .LogoAndText {
-      width: 100%;
-      justify-content: flex-start; /* Align logo to the left */
-  }
-   .Navlinks {
-       display: none;
-       flex-direction: column;
-       gap: 20px;
-       width: 100%;
-       align-items: flex-end;
+      flex: 1;
+      min-width: 0;
+      gap: 8px;
    }
 
    .DpwhText {
-       color: #010066;
-       font-size: 18px;
-       font-family: 'Poppins', sans-serif; /* Ensure Poppins font is applied */
-       font-weight: 700;
-       line-height: 32px;
+      font-size: 16px;
+      line-height: 20px;
+   }
+
+   .AdditionalText {
+      font-size: 9px;
+      font-weight: 500;
+      margin-top: 1px;
    }
 
    .Logo1 {
-      align-items: flex-start;
-       height: 60px;
-       width: auto;
-   }
-
-   .NavlinksActive {
-       display: flex;
-       flex-direction: column;
+      height: 44px;
    }
 
    .MenuToggle {
-       display: flex;
-       align-items: center;
-       cursor: pointer;
-       position: absolute;
-       top: 20px;
-       right: 20px;
+      display: flex;
+      width: 34px;
+      height: 34px;
+      font-size: 15px;
+   }
+
+   /* NavContainer collapses below the logo row */
+   .NavContainer {
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+   }
+
+   .NavContainer.open {
+      max-height: 400px;
+   }
+
+   .Navlinks {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      padding: 4px 0 10px;
+      align-items: stretch;
    }
 
    .Navlinks a {
-       font-size: 18px;
+      font-size: 13px;
+      padding: 8px 6px;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+      text-align: left;
+      transform: none !important;
    }
 
+   .Navlinks a:last-of-type {
+      border-bottom: none;
+   }
+
+   .PendingBadge {
+      position: static;
+      display: inline-flex;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-size: 10px;
+      width: 18px;
+      height: 18px;
+      padding: 2px 4px;
+   }
+
+   /* Logout button – full-width text style on mobile */
    .Btn {
-       padding: 10px 30px;
-       font-size: 14px;
-       width: 100%;
-       margin-top: 20px;
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+      margin-top: 4px;
+      justify-content: center;
    }
 
-   .AdditionalText{
+   .Btn .sign {
+      width: auto;
+      padding: 0;
+   }
+
+   .Btn .sign svg {
+      width: 14px;
+   }
+
+   .Btn .text {
+      position: static;
+      opacity: 1;
+      width: auto;
+      padding: 0 0 0 6px;
+      font-size: 0.85em;
+   }
+
+   /* Disable the hover expand animation on mobile */
+   .Btn:hover {
+      width: 100%;
+      border-radius: 8px;
+   }
+
+   .Btn:hover .sign {
+      width: auto;
+      padding: 0;
+   }
+
+   .Btn:hover .text {
+      width: auto;
+      padding: 0 0 0 6px;
+   }
+}
+
+@media (max-width: 480px) {
+   .Navigation {
+      padding: 7px 12px;
+   }
+   .DpwhText {
+      font-size: 14px;
+      line-height: 18px;
+   }
+   .AdditionalText {
       font-size: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
+   }
+   .Logo1 {
+      height: 38px;
    }
 }

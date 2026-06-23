@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,130 +9,188 @@
 
 .pending-container {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #f0f2f5;
 }
 
 .container {
     width: 90%;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.table-scroll-wrapper {
+    width: 100%;
     overflow-x: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-overflow-scrolling: touch;
 }
 
 .container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #010066;
     text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #010066;
 }
 
-/* Styles for the table */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 13px;
 }
 
-table th, table td {
-    padding: 12px;
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 11px 13px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
 }
 
-table th {
-    background-color: #007BFF;
-    color: white;
+th {
+    background-color: #010066;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
 }
 
-.actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+tbody tr:nth-child(even) {
+    background-color: #f8f9ff;
 }
 
-.actions a, .actions button {
-    margin-right: 0;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+tbody tr:hover {
+    background-color: #e8ecff;
 }
 
-.actions a.reviewbtn {
-    background-color: #28a745;
-    color: white;
+.action-cell {
+    white-space: nowrap;
 }
 
-.actions a.reviewbtn:hover {
-    background-color: #218838;
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 6px 13px !important;
+    border: none !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+    margin: 2px !important;
+    width: auto !important;
 }
 
-.actions button.deletebtn {
-    background-color: #dc3545;
-    color: white;
+.btn:hover {
+    transform: translateY(-1px);
 }
 
-.actions button.deletebtn:hover {
-    background-color: #c82333;
+.btn-review {
+    background-color: #28a745 !important;
+    color: #fff !important;
 }
 
-/* Responsive styles */
+.btn-review:hover {
+    background-color: #218838 !important;
+}
+
+.btn-delete {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+.btn-delete:hover {
+    background-color: #c82333 !important;
+}
+
 @media (max-width: 768px) {
-    table {
-        font-size: 14px;
-    }
-
-    .actions {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .actions a, .actions button {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    table th, table td {
-        padding: 8px;
-    }
-
-    .container h1 {
-        font-size: 20px;
-    }
+    .container { width: auto; margin: 80px 10px 24px; padding: 12px; }
+    .container h1 { font-size: 15px; margin-bottom: 12px; padding-bottom: 8px; }
+    table { font-size: 11px; }
+    th, td { padding: 7px 9px; }
+    th { font-size: 10px; }
+    .action-cell { white-space: normal; display: flex; flex-wrap: wrap; gap: 3px; }
+    .btn { padding: 4px 9px !important; font-size: 10px !important; gap: 3px !important; }
 }
 
-@media (max-width: 480px) {
-    table {
+/* ── Card layout for phones ── */
+@media (max-width: 600px) {
+    .container { margin-top: 72px; }
+    .container h1 { font-size: 13px; }
+
+    /* disable horizontal scroll — cards don't need it */
+    .table-scroll-wrapper { overflow-x: visible; }
+
+    table { border: none; }
+
+    /* hide the header row */
+    thead { display: none; }
+
+    /* each data row becomes a card */
+    tbody tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+        background: #fff;
+    }
+
+    tbody tr:nth-child(even) { background: #fff; }
+    tbody tr:hover { background: #fff; }
+
+    /* each cell: label on the left, value on the right */
+    td {
+        display: flex;
+        align-items: flex-start;
+        padding: 9px 14px;
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
         font-size: 12px;
+        gap: 10px;
+        line-height: 1.5;
+        white-space: normal;
     }
 
-    .actions {
-        gap: 3px;
+    td:last-child { border-bottom: none; }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        font-size: 10px;
+        color: #010066;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+        min-width: 90px;
+        flex-shrink: 0;
+        padding-top: 2px;
     }
 
-    .actions a, .actions button {
-        padding: 6px 10px;
+    /* actions row — no label, just buttons side by side */
+    td.action-cell {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 10px 14px;
+        justify-content: flex-start;
     }
 
-    .container {
-        padding: 5px;
-    }
+    td.action-cell::before { display: none; }
 
-    table th, table td {
-        padding: 5px;
-    }
-
-    .container h1 {
-        font-size: 18px;
+    .btn {
+        padding: 6px 14px !important;
+        font-size: 11px !important;
     }
 }

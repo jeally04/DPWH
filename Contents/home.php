@@ -4,17 +4,16 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Home - DPWH Job Sheet</title>
    <link rel="stylesheet" href="../styles/home.css">
-   <!-- <link rel="stylesheet" href="../styles/navbar.css"> -->
    <link rel="stylesheet" href="../styles/logoutModal.css">
    <script src="../Scripts/Nav-modal.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 
 <body>
    <div class="container">
-   <?php include '../Components/navbar.php'; ?>
+      <?php include '../Components/navbar.php'; ?>
 
       <div class="Dpwh">
          <img class="Logo2" src="../image/logo.png" />
@@ -22,7 +21,7 @@
             <div class="Form">
                <a href="pending_form.php">
                   <div class="Rectangle1"></div>
-                  <div class="FormText">Form</div>
+                  <div class="FormText">Request Form</div>
                   <img class="JobSheet1" src="../image/form_form.png" />
                </a>
             </div>
@@ -49,5 +48,14 @@
             </div>
          </div>
       </div>
-   </body>
+   </div>
+
+   <div id="logoutModal" class="modal">
+      <div class="modal-content">
+         <p>Are you sure you want to log out?</p>
+         <button class="confirm-logout" onclick="confirmLogout()">Yes</button>
+         <button class="cancel-logout" onclick="closeModal()">No</button>
+      </div>
+   </div>
+</body>
 </html>

@@ -182,9 +182,9 @@
          </div>
 
          <div class="button-group">
-            <button id="submitBtn" type="submit">Submit</button>
-            <a href="pending.php"><button type="button" class="historybtn">Cancel</button></a>
-            <a href="history.php"><button type="button" class="historybtn">History</button></a>
+            <button id="submitBtn" type="submit" class="btn-primary">Submit</button>
+            <a href="pending.php" class="btn-secondary">Cancel</a>
+            <a href="history.php" class="btn-secondary">History</a>
          </div>
       </form>
       <div id="response"></div>
@@ -206,22 +206,10 @@
       });
 
       document.getElementById('submitBtn').addEventListener('click', function (event) {
-         const radios = document.querySelectorAll('input[type="radio"][required]');
-         let radiosValid = true;
-
-         radios.forEach(function (radio) {
-            const radioName = radio.name;
-            if (!document.querySelector('input[name="' + radioName + '"]:checked')) {
-               radiosValid = false;
-            }
-         });
-
-         const comments = document.getElementById('comments').value.trim();
-         const commentsValid = comments !== '';
-
-         if (!radiosValid || !commentsValid) {
+         const type = document.getElementById('type').value;
+         if (!type) {
             event.preventDefault();
-            alert('Please complete all required fields');
+            alert('Please select a Type (Hardware or Software)');
          }
       });
 
@@ -229,14 +217,9 @@
          const year = date.getFullYear();
          const month = String(date.getMonth() + 1).padStart(2, '0');
          const day = String(date.getDate()).padStart(2, '0');
-         let hours = date.getHours();
+         const hours = String(date.getHours()).padStart(2, '0');
          const minutes = String(date.getMinutes()).padStart(2, '0');
-         const ampm = hours >= 12 ? 'PM' : 'AM';
-
-         hours = hours % 12;
-         hours = hours ? hours : 12; // Handle midnight (0 hours)
-
-         return `${year}-${month}-${day}T${String(hours).padStart(2, '0')}:${minutes} ${ampm}`;
+         return `${year}-${month}-${day}T${hours}:${minutes}`;
       }
 
       function setCurrentDateTime() {

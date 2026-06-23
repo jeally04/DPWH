@@ -8,7 +8,6 @@
    <link rel="stylesheet" href="../styles/pending_form.css">
    <link rel="stylesheet" href="../styles/logoutModal.css">
    <script src="../Scripts/Nav-modal.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
    <style>
       .sub-options {
          display: none;
@@ -37,6 +36,7 @@
    <div class="pending-container">
       <?php include '../Components/navbar.php'; ?>
       <div class="form-container">
+         <h2>New Pending Form</h2>
          <form id="job-sheet-form" action="../process_form.php" method="POST">
             <label for="full_name">Full Name:</label>
             <input type="text" id="full_name" name="full_name" placeholder="Last Name, First Name, Middle Initial" required>

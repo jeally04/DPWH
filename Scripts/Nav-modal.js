@@ -11,8 +11,8 @@ function openModal() {
  }
 
  function toggleMenu() {
-    const navlinks = document.getElementById('Navlinks');
-    navlinks.classList.toggle('NavlinksActive');
+    const navContainer = document.querySelector('.NavContainer');
+    navContainer.classList.toggle('open');
  }
 
  if (window.history.replaceState) {
